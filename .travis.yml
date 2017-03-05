@@ -19,13 +19,13 @@ matrix:
     - env: TOXENV=py37
 
 before_install:
-  - pip install --upgrade setuptools pip wheel
+    - pip install --upgrade setuptools pip wheel
 
 # command to install dependencies
 install:
-  - pip install -r requirements-build.txt
+    - pip install -r requirements-build.txt
 
 # command to run tests
 script:
-  - tox
+    - tox
 
