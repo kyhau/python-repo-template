@@ -19,13 +19,13 @@ matrix:
     - env: TOXENV=py37
 
 before_install:
-  - travis_retry pip install --upgrade setuptools pip wheel
+  - pip install --upgrade setuptools pip wheel
 
 # command to install dependencies
 install:
-  - travis_retry pip install -r requirements-build.txt
+  - pip install -r requirements-build.txt
 
 # command to run tests
 script:
-  - travis_retry tox -r
+  - tox -r
 
