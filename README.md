@@ -1,9 +1,9 @@
 # python-repo-template
-This is a template repository that you can use to quickly create a python application that can be built, tested, and released as an internal python module.
 
 [![Build Status](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
 
+This is a template repository that you can use to quickly create a python application that can be built, tested, and released as an internal python module.
 
 ## Setting up a new repository from this template
 **Create a directory and pull all the files in this template into it**
