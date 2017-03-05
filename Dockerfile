@@ -1,4 +1,4 @@
-MAINTAINER Kayan Hau <virtualda@gmail.com>
+MAINTAINER Kay Hau <virtualda@gmail.com>
 
 # This implies using the following docker build black magic
 # to make it work with different PIP indexes

@@ -11,7 +11,7 @@ if os.environ.get("BUILD_LIB") == "1":
 
 base_dir = os.path.dirname(__file__)
 
-__author__ = "Kayan Hau"
+__author__ = "Kay Hau"
 __email__ = "virtualda@gmail.com"
 
 __title__ = "module"
@@ -40,4 +40,8 @@ setup(
     data_files=[
         ('', ['ReleaseNotes.md']),
     ],
+    # For data inside packages can use the automatic inclusion
+    # include_package_data = True,
+    # or the explicit inclusion, eg:
+    # package_data = { 'package_name': ['data.file1', 'data.file2' , ...] }
 )
