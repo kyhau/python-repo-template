@@ -27,5 +27,5 @@ install:
 
 # command to run tests
 script:
-  - travis_retry tox
+  - travis_retry tox -r
 
