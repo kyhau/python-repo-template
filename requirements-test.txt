@@ -1,4 +1,5 @@
 # This file prepares the pytest and coverage env and is used by tox.ini
+six>=1.10.0
 codecov>=2.0.5
 cov-core>=1.15.0
 coverage>=4.2
