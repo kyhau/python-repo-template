@@ -39,3 +39,11 @@ pip install -r requirements-build.txt
 # run the python tests
 tox -r
 ```
+
+## Building Wheels
+
+If the library is py2/py3 compatible then remove the `bdist_wheel` lines in tox.ini and use this bdist_wheel line in test.sh/test.bat instead
+
+```
+python setup.py bdist_wheel --universal
+```
