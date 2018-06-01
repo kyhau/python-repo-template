@@ -20,7 +20,7 @@ __summary__ = "This package creates a framework for python packages to be built.
 __uri__ = "https://github.com/kyhau/python-repo-template"
 
 __requirements__ = [
-    'six>=1.10.0'
+    "six>=1.10.0"
 ]
 
 with open(os.path.join(base_dir, "README.md")) as f:
@@ -31,17 +31,17 @@ setup(
     version=__version__,
     description=__summary__,
     long_description=long_description,
-    packages=find_packages(exclude=['tests']),
+    packages=find_packages(exclude=["tests"]),
     author=__author__,
     author_email=__email__,
     url=__uri__,
     zip_safe=False,
     install_requires=__requirements__,
     data_files=[
-        ('', ['ReleaseNotes.md']),
+        ("", ["ReleaseNotes.md"]),
     ],
     # For data inside packages can use the automatic inclusion
     # include_package_data = True,
     # or the explicit inclusion, eg:
-    # package_data = { 'package_name': ['data.file1', 'data.file2' , ...] }
+    # package_data = { "package_name": ["data.file1", "data.file2" , ...] }
 )
