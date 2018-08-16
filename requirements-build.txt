@@ -1,5 +1,5 @@
-# This file is used for running tox, pylint and build the wheel
-pip>=9.0.1
+# This file is used for running tox and building the wheel
+pip>=9.0.3
 six>=1.10.0
 logilab-common>=1.2.2
 tox>=2.4.1

@@ -3,25 +3,23 @@ from setuptools import setup, find_packages
 import os
 
 
-# Makes setup work inside of a virtualenv
-use_system_lib = True
-if os.environ.get("BUILD_LIB") == "1":
-    use_system_lib = False
-
-
 base_dir = os.path.dirname(__file__)
-
 __author__ = "Kay Hau"
 __email__ = "virtualda@gmail.com"
-
 __title__ = "module"
-__version__ = "1.0.0"
+__version__ = "1.0.0.dev0"
 __summary__ = "This package creates a framework for python packages to be built."
 __uri__ = "https://github.com/kyhau/python-repo-template"
 
 __requirements__ = [
     "six>=1.10.0"
 ]
+
+__entry_points__ = {
+    "console_scripts": [
+        "new_module = module.main:main",
+    ],
+}
 
 with open(os.path.join(base_dir, "README.md")) as f:
     long_description = f.read()
@@ -43,5 +41,6 @@ setup(
     # For data inside packages can use the automatic inclusion
     # include_package_data = True,
     # or the explicit inclusion, eg:
-    # package_data = { "package_name": ["data.file1", "data.file2" , ...] }
+    # package_data={ "package_name": ["data.file1", "data.file2" , ...] }
+    entry_points=__entry_points__,
 )
