@@ -6,6 +6,13 @@
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
 
+**Use**
+
+- [Travis CI](https://travis-ci.org/)
+- [tox](https://tox.readthedocs.io/en/latest/)
+- [codecov](https://codecov.io/) 
+- [bumpversion](https://github.com/peritus/bumpversion)
+
 ## Setting up a new repository from this template
 
 Create a directory and pull all the files in this template.
