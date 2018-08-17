@@ -52,35 +52,25 @@ python setup.py bdist_wheel --universal
 
 ## Version-bump your application or module with [bumpversion](https://github.com/peritus/bumpversion)
 
-Install bumpversion:
+Examples
 
-    pip install bumpversion
-
-To move from a dev version to a full release, run this command:
-
+    # e.g. 1.2.3.dev0 -> 1.2.3
     bumpversion release
-    e.g. 1.2.3.dev0 -> 1.2.3
 
-To move from a full release to a dev version, run this command:
-
+    # e.g. 1.2.3 -> 1.2.4.dev0
     bumpversion patch
-    e.g. 1.2.3 -> 1.2.4.dev0
 
-To bump a major|minor|patch 'part', run one of these commands:
-
+    # e.g. 1.2.3.dev0 -> 2.0.0.dev0
     bumpversion major
+
+    # e.g. 1.2.3.dev0 -> 1.3.0.dev0
     bumpversion minor
+    
+    # e.g. 1.2.3.dev0 -> 1.2.4.dev0
     bumpversion patch
-    e.g. 1.2.3.dev0 -> 2.0.0.dev0
-    e.g. 1.2.3.dev0 -> 1.3.0.dev0
-    e.g. 1.2.3.dev0 -> 1.2.4.dev0
 
-To bump a dev version, run this command:
-
+    # e.g. 1.2.3.dev0 -> 1.2.3.dev1
     bumpversion dev
-    e.g. 1.2.3.dev0 -> 1.2.3.dev1
 
-To see what would happen without changing any files, run this command:
-
+    # e.g. 1.2.3.dev0 -> 1.2.3
     bumpversion --dry-run --list release
-    e.g. 1.2.3.dev0 -> 1.2.3
