@@ -21,26 +21,46 @@ __entry_points__ = {
     ],
 }
 
-with open(os.path.join(base_dir, "README.md")) as f:
-    long_description = f.read()
+long_description = ""
+try:
+    # Reformat description as PyPi use ReStructuredText rather than Markdown
+    import m2r
+    long_description = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
+except (ImportError, IOError, OSError) as e:
+    import logging
+    logging.warning("m2r conversion failed: {}".format(e))
+
+CLASSIFIERS = [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+#    "Programming Language :: Python :: 3 :: Only",
+]
+
 
 setup(
-    name=__title__,
-    version=__version__,
-    description=__summary__,
-    long_description=long_description,
-    packages=find_packages(exclude=["tests"]),
     author=__author__,
     author_email=__email__,
-    url=__uri__,
-    zip_safe=False,
-    install_requires=__requirements__,
+    classifiers=CLASSIFIERS,
+    # data_files parameter is only required for files outside the packages, used in conjunction with the MANIFEST.in
     data_files=[
         ("", ["ReleaseNotes.md"]),
     ],
+    description=__summary__,
+    entry_points=__entry_points__,
+    install_requires=__requirements__,
+    long_description=long_description,
+    name=__title__,
     # For data inside packages can use the automatic inclusion
     # include_package_data = True,
-    # or the explicit inclusion, eg:
+    # or the explicit inclusion, e.g.:
     # package_data={ "package_name": ["data.file1", "data.file2" , ...] }
-    entry_points=__entry_points__,
+    packages=find_packages(exclude=["tests"]),
+    url=__uri__,
+    version=__version__,
+    zip_safe=False,
 )
