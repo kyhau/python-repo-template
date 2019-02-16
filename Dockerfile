@@ -8,3 +8,5 @@ ADD  .  /opt/apps/module
 RUN ((cd /opt/apps/module && pip --no-cache-dir install -e .) && \
      rm -rf /root/.cache/pip)
 
+# Call module's main entry point/script defined in setup.py
+#CMD ["run_module"]

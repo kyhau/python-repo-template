@@ -1,4 +1,3 @@
-from __future__ import absolute_import, division, print_function
 from setuptools import setup, find_packages
 import os
 
@@ -12,7 +11,6 @@ __summary__ = "This package creates a framework for python packages to be built.
 __uri__ = "https://github.com/kyhau/python-repo-template"
 
 __requirements__ = [
-    "six>=1.10.0"
 ]
 
 __entry_points__ = {
@@ -21,26 +19,21 @@ __entry_points__ = {
     ],
 }
 
-long_description = ""
+__long_description__ = ""
 try:
     # Reformat description as PyPi use ReStructuredText rather than Markdown
     import m2r
-    long_description = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
+    __long_description__ = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
 except (ImportError, IOError, OSError) as e:
     import logging
     logging.warning("m2r conversion failed: {}".format(e))
 
 CLASSIFIERS = [
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
-#    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3 :: Only",
 ]
-
 
 setup(
     author=__author__,
@@ -53,12 +46,12 @@ setup(
     description=__summary__,
     entry_points=__entry_points__,
     install_requires=__requirements__,
-    long_description=long_description,
+    long_description=__long_description__,
     name=__title__,
     # For data inside packages can use the automatic inclusion
-    # include_package_data = True,
+    #   include_package_data = True,
     # or the explicit inclusion, e.g.:
-    # package_data={ "package_name": ["data.file1", "data.file2" , ...] }
+    #   package_data={ "package_name": ["data.file1", "data.file2" , ...] }
     packages=find_packages(exclude=["tests"]),
     url=__uri__,
     version=__version__,
