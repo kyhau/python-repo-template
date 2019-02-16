@@ -5,12 +5,14 @@ matrix:
     include:
     - python: 3.6
       env: TOXENV=py36
-    - python: 3.6
+    - python: 3.7
+      dist: xenial
+      sudo: true
       env: TOXENV=py3-cover,coverage
     - python: nightly
       env: TOXENV=py37
-    allow_failures:
-    - env: TOXENV=py37
+    #allow_failures:
+    #- env: TOXENV=py37
 
 before_install:
     - python -m pip install --upgrade setuptools pip virtualenv

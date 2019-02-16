@@ -1,6 +1,5 @@
-# This file is used for running tox and building the wheel
-pip>=9.0.3
-six>=1.10.0
-logilab-common>=1.2.2
-tox>=2.4.1
-wheel>=0.29.0
+# This file is used for running tox
+pip>=18.0
+logilab-common>=1.4.2
+m2r>=0.2.0
+tox>=2.9.1
