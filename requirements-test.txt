@@ -2,6 +2,7 @@
 codecov~=2.0
 cov-core~=1.15
 coverage~=4.5
+flake8~=3.7
 mock~=2.0
 pytest~=4.3
 pytest-cov~=2.6
