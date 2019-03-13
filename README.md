@@ -6,6 +6,8 @@
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
 
+Support Python 3.6 and 3.7.
+
 **Use**
 
 - [Travis CI](https://travis-ci.org/)
@@ -17,7 +19,7 @@ released as an internal python module.
 
 Create a directory and pull all the files in this template.
 
-```bash
+```
 mkdir new_repo_name
 cd new_repo_name
 git init
@@ -35,7 +37,7 @@ pip install -e .
 ```
 
 **Windows**
-```bash
+```
 virtualenv env
 env\Scripts\activate
 pip install -e .
@@ -43,17 +45,9 @@ pip install -e .
 
 ## Run pytest with Tox
 
-```bash
+```
 pip install -r requirements-build.txt
 tox -r
-```
-
-## Build wheels
-
-If the library is py2/py3 compatible then remove the `bdist_wheel` lines in tox.ini and run this line.
-
-```bash
-python setup.py bdist_wheel --universal
 ```
 
 
