@@ -26,7 +26,7 @@ try:
     __long_description__ = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
 except (ImportError, IOError, OSError) as e:
     import logging
-    logging.warning("m2r conversion failed: {}".format(e))
+    logging.warning(f"m2r conversion failed: {e}")
 
 CLASSIFIERS = [
     "Programming Language :: Python :: 3",
