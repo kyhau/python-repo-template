@@ -13,7 +13,7 @@ Support Python 3.6 and 3.7.
 - [Travis CI](https://travis-ci.org/)
 - [tox](https://tox.readthedocs.io/en/latest/)
 - [codecov](https://codecov.io/) 
-- [bumpversion](https://github.com/peritus/bumpversion)
+- [bump2version](https://github.com/c4urself/bump2version)
 
 ## Setting up a new repository from this template
 
@@ -51,27 +51,27 @@ tox -r
 ```
 
 
-## Version-bump your application or module with [bumpversion](https://github.com/peritus/bumpversion)
+## Version-bump your application or module with [bump2version](https://github.com/c4urself/bump2version)
 
 Examples
 
     # e.g. 1.2.3.dev0 -> 1.2.3
-    bumpversion release
+    bumpversion --allow-dirty --commit --tag release
 
     # e.g. 1.2.3 -> 1.2.4.dev0
-    bumpversion patch
+    bumpversion --commit patch
 
     # e.g. 1.2.3.dev0 -> 2.0.0.dev0
-    bumpversion major
+    bumpversion --commit major
 
     # e.g. 1.2.3.dev0 -> 1.3.0.dev0
-    bumpversion minor
+    bumpversion --commit minor
     
     # e.g. 1.2.3.dev0 -> 1.2.4.dev0
-    bumpversion patch
+    bumpversion --commit patch
 
     # e.g. 1.2.3.dev0 -> 1.2.3.dev1
-    bumpversion dev
+    bumpversion --commit dev
 
     # e.g. 1.2.3.dev0 -> 1.2.3
     bumpversion --dry-run --list release
