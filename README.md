@@ -6,7 +6,7 @@
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
 
-Support Python 3.6 and 3.7.
+Support Python 3.6, 3.7, 3.8.
 
 **Use**
 
@@ -14,6 +14,7 @@ Support Python 3.6 and 3.7.
 - [tox](https://tox.readthedocs.io/en/latest/)
 - [codecov](https://codecov.io/) 
 - [bump2version](https://github.com/c4urself/bump2version)
+- [Mypy](https://github.com/python/mypy)
 
 ## Setting up a new repository from this template
 
@@ -43,7 +44,7 @@ env\Scripts\activate
 pip install -e .
 ```
 
-## Run pytest with Tox
+## Run pytest, codecov, mypy and flake8 with Tox
 
 ```
 pip install -r requirements-build.txt
