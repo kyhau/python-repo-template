@@ -13,7 +13,9 @@ Support Python 3.6, 3.7, 3.8.
 - [Travis CI](https://travis-ci.org/)
 - [tox](https://tox.readthedocs.io/en/latest/)
 - [codecov](https://codecov.io/) 
+- [black](https://github.com/psf/black)
 - [bump2version](https://github.com/c4urself/bump2version)
+- [flake8](https://gitlab.com/pycqa/flake8)
 - [Mypy](https://github.com/python/mypy)
 
 ## Setting up a new repository from this template
@@ -32,14 +34,14 @@ git pull https://github.com/kyhau/python-repo-template
 **Linux**
 
 ```bash
-virtualenv env
+virtualenv -p python3.8 env
 . env/bin/activate
 pip install -e .
 ```
 
 **Windows**
 ```
-virtualenv env
+virtualenv -p C:\Python37env\python.exe env
 env\Scripts\activate
 pip install -e .
 ```
