@@ -10,22 +10,21 @@ __version__ = "1.0.0.dev0"
 __summary__ = "This package creates a framework for python packages to be built."
 __uri__ = "https://github.com/kyhau/python-repo-template"
 
-__requirements__ = [
-]
+__requirements__ = []
 
 __entry_points__ = {
-    "console_scripts": [
-        "new_module = module.main:main",
-    ],
+    "console_scripts": ["new_module = module.main:main",],
 }
 
 __long_description__ = ""
 try:
     # Reformat description as PyPi use ReStructuredText rather than Markdown
     import m2r
+
     __long_description__ = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
 except (ImportError, IOError, OSError) as e:
     import logging
+
     logging.warning(f"m2r conversion failed: {e}")
 
 CLASSIFIERS = [
@@ -40,9 +39,7 @@ setup(
     author_email=__email__,
     classifiers=CLASSIFIERS,
     # data_files parameter is only required for files outside the packages, used in conjunction with the MANIFEST.in
-    data_files=[
-        ("", ["ReleaseNotes.md"]),
-    ],
+    data_files=[("", ["ReleaseNotes.md"]),],
     description=__summary__,
     entry_points=__entry_points__,
     install_requires=__requirements__,

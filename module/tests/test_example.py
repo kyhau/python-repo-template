@@ -7,4 +7,3 @@ def test_sample_function():
 
 def test_main():
     assert 0 == main.main()
-

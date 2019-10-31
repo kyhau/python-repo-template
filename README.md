@@ -34,7 +34,7 @@ git pull https://github.com/kyhau/python-repo-template
 **Linux**
 
 ```bash
-virtualenv -p python3.8 env
+virtualenv -p python3.7 env
 . env/bin/activate
 pip install -e .
 ```
@@ -46,10 +46,15 @@ env\Scripts\activate
 pip install -e .
 ```
 
-## Run pytest, codecov, mypy and flake8 with Tox
+## Run Black, then run pytest, codecov, mypy and flake8 with Tox
 
 ```
 pip install -r requirements-build.txt
+
+# Autoformat code following most of the rules in PEP 8
+black --line-length=79 module/
+
+# Run pytest, codecov, mypy and flake8 with Tox
 tox -r
 ```
 
