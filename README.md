@@ -6,7 +6,7 @@
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
 
-Support Python 3.6, 3.7, 3.8.
+Support Python 3.7, 3.8, 3.9.
 
 **Use**
 
@@ -34,14 +34,14 @@ git pull https://github.com/kyhau/python-repo-template
 **Linux**
 
 ```bash
-virtualenv -p python3.7 env
+virtualenv -p python3.8 env
 . env/bin/activate
 pip install -e .
 ```
 
 **Windows**
 ```
-virtualenv -p C:\Python37env\python.exe env
+virtualenv -p C:\Python38\python.exe env
 env\Scripts\activate
 pip install -e .
 ```
