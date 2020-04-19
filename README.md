@@ -1,7 +1,9 @@
 # python-repo-template
 
-[![Build Status](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
+[![githubactions](https://github.com/kyhau/python-repo-template/workflows/Build-Test/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
+[![travisci](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
+
 
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
@@ -11,6 +13,7 @@ Support Python 3.7, 3.8, 3.9.
 **Use**
 
 - [Travis CI](https://travis-ci.org/)
+- [GitHub Actions](https://github.com/actions)
 - [tox](https://tox.readthedocs.io/en/latest/)
 - [codecov](https://codecov.io/) 
 - [black](https://github.com/psf/black)
