@@ -1,7 +1,7 @@
 # python-repo-template
 
 [![githubactions](https://github.com/kyhau/python-repo-template/workflows/build-test/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
-[![travis](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
+[![travisci](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
 
 
