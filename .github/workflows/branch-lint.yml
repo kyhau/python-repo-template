@@ -1,0 +1,18 @@
+name: branch-lint
+
+on:
+  push:
+    branches-ignore:
+      - master
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run yamllint
+        run: yamllint -c ./.github/linters/.yaml-lint.yml .github cloudformation
