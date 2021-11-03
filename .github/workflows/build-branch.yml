@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run yamllint
-        run: yamllint -c .github/linters/.yaml-lint.yml .github/
+        run: yamllint -c .github/linters/.yaml-lint.yaml .github/
 
   build:
     needs: lint
