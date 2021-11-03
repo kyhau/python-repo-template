@@ -1,6 +1,6 @@
 # python-repo-template
 
-[![githubactions](https://github.com/kyhau/python-repo-template/workflows/Build-Test/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
+[![githubactions](https://github.com/kyhau/python-repo-template/workflows/Build-Main/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
 [![travisci](https://img.shields.io/travis/kyhau/python-repo-template.svg?label=Travis%20CI&logo=travis&style=flat-square)](https://travis-ci.org/kyhau/python-repo-template)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
 
@@ -15,7 +15,7 @@ Support Python 3.7, 3.8, 3.9.
 - [Travis CI](https://travis-ci.org/)
 - [GitHub Actions](https://github.com/actions)
 - [tox](https://tox.readthedocs.io/en/latest/)
-- [codecov](https://codecov.io/) 
+- [codecov](https://codecov.io/)
 - [black](https://github.com/psf/black)
 - [bump2version](https://github.com/c4urself/bump2version)
 - [flake8](https://gitlab.com/pycqa/flake8)
@@ -32,7 +32,7 @@ git init
 git pull https://github.com/kyhau/python-repo-template
 ```
 
-## Create virtual env and install dependencies 
+## Create virtual env and install dependencies
 
 **Linux**
 
@@ -77,7 +77,7 @@ Examples
 
     # e.g. 1.2.3.dev0 -> 1.3.0.dev0
     bumpversion --commit minor
-    
+
     # e.g. 1.2.3.dev0 -> 1.2.4.dev0
     bumpversion --commit patch
 
