@@ -1,6 +1,6 @@
-from setuptools import setup, find_packages
 import os
 
+from setuptools import find_packages, setup
 
 base_dir = os.path.dirname(__file__)
 __author__ = "Kay Hau"
@@ -19,12 +19,10 @@ __entry_points__ = {
 __long_description__ = ""
 try:
     # Reformat description as PyPi use ReStructuredText rather than Markdown
-    import m2r
-
-    __long_description__ = m2r.parse_from_file(os.path.join(base_dir, "README.md"))
+    import m2r2
+    __long_description__ = m2r2.parse_from_file(os.path.join(base_dir, "README.md"))
 except (ImportError, IOError, OSError) as e:
     import logging
-
     logging.warning(f"m2r conversion failed: {e}")
 
 CLASSIFIERS = [
@@ -33,6 +31,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3 :: Only",
 ]
 
