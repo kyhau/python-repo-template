@@ -2,7 +2,6 @@
 pip~=21.3
 black
 logilab-common~=1.8
-m2r~=0.2
-mistune<3.0.0  # dep of m2r
+m2r2~=0.3
 tox~=3.24
 virtualenv~=20.10
