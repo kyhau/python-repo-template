@@ -21,29 +21,6 @@ jobs:
       - name: Run yamllint
         run: yamllint -c .github/linters/.yaml-lint.yaml -f parsable --format standard .github/
 
-  security:
-    name: Run Snyk to check for vulnerabilities
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@master
-
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/python-3.8@master
-        continue-on-error: true # To make sure that SARIF upload gets called
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --all-projects --severity-threshold=high --sarif-file-output=snyk.sarif
-
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: snyk.sarif
-
   build:
     needs: lint
     runs-on: ubuntu-latest
