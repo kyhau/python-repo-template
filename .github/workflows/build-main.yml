@@ -24,6 +24,9 @@ jobs:
   security:
     name: Run Snyk to check for vulnerabilities
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
     steps:
       - name: Checkout sources
         uses: actions/checkout@master
