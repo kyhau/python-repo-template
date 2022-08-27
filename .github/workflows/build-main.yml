@@ -19,7 +19,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run yamllint
-        run: yamllint -c .github/linters/.yaml-lint.yaml .github/
+        run: yamllint -c .github/linters/.yaml-lint.yaml -f parsable --format standard .github/
+
+  security:
+    name: Run Snyk to check for vulnerabilities
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@master
+
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.8@master
+        continue-on-error: true # To make sure that SARIF upload gets called
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --all-projects --severity-threshold=high --sarif-file-output=snyk.sarif
+
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk.sarif
 
   build:
     needs: lint
@@ -43,7 +63,8 @@ jobs:
           pip install -r requirements-build.txt
           black --line-length=79 module/
 
-      - id: ToxSetting
+      - name: Set tox setting
+        id: ToxSetting
         run: |
           if [[ "${{ matrix.python-version }}" == "3.8" ]]
           then
@@ -58,3 +79,11 @@ jobs:
       - name: Test with tox
         run: |
           tox -r -e ${{ steps.ToxSetting.outputs.toxenv }}
+
+      - name: Upload coverage reports to Codecov
+        run: |
+          # Replace `linux` below with the appropriate OS
+          # Options are `alpine`, `linux`, `macos`, `windows`
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${CODECOV_TOKEN}

@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run yamllint
-        run: yamllint -c .github/linters/.yaml-lint.yaml .github/
+        run: yamllint -c .github/linters/.yaml-lint.yaml -f parsable --format standard .github/
 
   build:
     needs: lint
@@ -43,7 +43,8 @@ jobs:
           pip install -r requirements-build.txt
           black --line-length=79 module/
 
-      - id: ToxSetting
+      - name: Set tox setting
+        id: ToxSetting
         run: |
           if [[ "${{ matrix.python-version }}" == "3.8" ]]
           then
