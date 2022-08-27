@@ -8,18 +8,18 @@
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
 released as an internal python module.
 
-Support Python 3.7, 3.8, 3.9.
+Support Python 3.7, 3.8, 3.9, 3.10.
 
 **Use**
 
-- [Travis CI](https://travis-ci.org/)
 - [GitHub Actions](https://github.com/actions)
-- [tox](https://tox.readthedocs.io/en/latest/)
-- [codecov](https://codecov.io/)
+- [Travis CI](https://travis-ci.org/)
 - [black](https://github.com/psf/black)
 - [bump2version](https://github.com/c4urself/bump2version)
+- [codecov](https://codecov.io/)
 - [flake8](https://gitlab.com/pycqa/flake8)
 - [Mypy](https://github.com/python/mypy)
+- [tox](https://tox.readthedocs.io/en/latest/)
 
 ## Setting up a new repository from this template
 
@@ -37,7 +37,7 @@ git pull https://github.com/kyhau/python-repo-template
 **Linux**
 
 ```bash
-virtualenv -p python3.8 env
+virtualenv -p python3.9 env
 . env/bin/activate
 pip install -e .
 ```
