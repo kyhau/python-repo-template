@@ -3,6 +3,7 @@
 [![githubactions](https://github.com/kyhau/python-repo-template/workflows/Build-Main/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
 [![travisci](https://img.shields.io/travis/kyhau/python-repo-template.svg?label=Travis%20CI&logo=travis&style=flat-square)](https://travis-ci.org/kyhau/python-repo-template)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
+[![CodeQL](https://github.com/kyhau/python-repo-template/workflows/CodeQL/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
 
 
 This is a template repository that you can use to quickly create a python application that can be built, tested, and
@@ -44,7 +45,7 @@ pip install -e .
 
 **Windows**
 ```
-virtualenv -p C:\Python38\python.exe env
+virtualenv -p C:\Python39\python.exe env
 env\Scripts\activate
 pip install -e .
 ```

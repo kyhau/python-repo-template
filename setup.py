@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages, setup
 
 base_dir = os.path.dirname(__file__)
-__author__ = "Kay Hau"
+__author__ = "kyhau"
 __email__ = "virtualda@gmail.com"
 __title__ = "module"
 __version__ = "1.0.0.dev0"
@@ -39,7 +39,7 @@ setup(
     author_email=__email__,
     classifiers=CLASSIFIERS,
     # data_files parameter is only required for files outside the packages, used in conjunction with the MANIFEST.in
-    data_files=[("", ["ReleaseNotes.md"]),],
+    data_files=[("", ["CHANGELOG.md"]),],
     description=__summary__,
     entry_points=__entry_points__,
     install_requires=__requirements__,
@@ -50,6 +50,7 @@ setup(
     # or the explicit inclusion, e.g.:
     #   package_data={ "package_name": ["data.file1", "data.file2" , ...] }
     packages=find_packages(exclude=["tests"]),
+    python_requires=">=3.7",
     url=__uri__,
     version=__version__,
     zip_safe=False,

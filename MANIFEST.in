@@ -10,4 +10,4 @@
 
 include README.md
 
-include ReleaseNotes.md
+include CHANGELOG.md
