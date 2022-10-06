@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 LABEL maintainer="virtualda@gmail.com"
 ARG PIP_INDEX_URL
 
