@@ -5,3 +5,4 @@ logilab-common==1.9.7
 m2r2==0.3.3
 tox==3.26.0
 virtualenv==20.16.5
+mistune>=2.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
