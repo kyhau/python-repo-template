@@ -14,6 +14,9 @@ Support Python 3.7, 3.8, 3.9, 3.10, 3.11.
 **Use**
 
 - [GitHub Actions](https://github.com/actions)
+- [CodeQL](https://codeql.github.com) is [enabled](.github/workflows/codeql-analysis.yml) in this repository.
+- [Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates) is [enabled](.github/dependabot.yml) in this repository.
+- [Snyk](https://github.com/snyk/actions) is enabled in this repository.
 - [Travis CI](https://travis-ci.org/)
 - [black](https://github.com/psf/black)
 - [bump2version](https://github.com/c4urself/bump2version)
