@@ -25,7 +25,7 @@ except (ImportError, IOError, OSError) as e:
     print("long_description conversion failure, fallback to using raw contents")
     import io
     with io.open(os.path.join(base_dir, "README.md"), encoding="utf-8") as f:
-        long_description = f.read()
+        __long_description__ = f.read()
 
 CLASSIFIERS = [
     "Programming Language :: Python :: 3",
