@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, "3.10"]
+        python-version: [3.8, 3.9, "3.10", 3.11]
 
     steps:
       - name: Checkout sources
@@ -52,8 +52,11 @@ jobs:
           elif [[ "${{ matrix.python-version }}" == "3.9" ]]
           then
             echo "::set-output name=toxenv::py39"
-          else
+          elif [[ "${{ matrix.python-version }}" == "3.10" ]]
+          then
             echo "::set-output name=toxenv::py310"
+          else
+            echo "::set-output name=toxenv::py311"
           fi
 
       - name: Test with tox
