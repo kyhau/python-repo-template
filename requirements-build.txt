@@ -2,7 +2,6 @@
 pip==22.3.1
 black==22.10.0
 logilab-common==1.9.7
-m2r2==0.3.3
+pypandoc==1.10
 tox==3.27.0
 virtualenv==20.16.6
-mistune>=2.0.3 # not directly required, pinned by Snyk to avoid a vulnerability

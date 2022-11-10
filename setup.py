@@ -19,11 +19,13 @@ __entry_points__ = {
 __long_description__ = ""
 try:
     # Reformat description as PyPi use ReStructuredText rather than Markdown
-    import m2r2
-    __long_description__ = m2r2.parse_from_file(os.path.join(base_dir, "README.md"))
+    import pypandoc
+    __long_description__ = pypandoc.convert_file(os.path.join(base_dir, "README.md"), "rst")
 except (ImportError, IOError, OSError) as e:
-    import logging
-    logging.warning(f"m2r conversion failed: {e}")
+    print("long_description conversion failure, fallback to using raw contents")
+    import io
+    with io.open(os.path.join(base_dir, "README.md"), encoding="utf-8") as f:
+        long_description = f.read()
 
 CLASSIFIERS = [
     "Programming Language :: Python :: 3",
