@@ -12,11 +12,14 @@ matrix:
     - python: 3.9
       dist: focal
       env: TOXENV=py39
-    - python: nightly
+    - python: 3.10
       dist: focal
       env: TOXENV=py10
+    - python: nightly
+      dist: focal
+      env: TOXENV=py11
   allow_failures:
-    - env: TOXENV=py10
+    - env: TOXENV=py11
 
 before_install:
   - python -m pip install --upgrade setuptools pip virtualenv
@@ -28,6 +31,6 @@ install:
 # command to run tests
 script:
   # autoformat code following most of the rules in PEP 8
-  - black --line-length=79 module/
+  - black --line-length=99 module/
   # run pytest, codecov, mypy and flake8 with Tox
   - tox -r
