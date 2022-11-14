@@ -5,3 +5,4 @@ logilab-common==1.9.7
 pypandoc==1.10
 tox==3.27.1
 virtualenv==20.16.6
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
