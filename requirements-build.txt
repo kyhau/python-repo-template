@@ -3,5 +3,5 @@ pip==22.3.1
 black==22.10.0
 logilab-common==1.9.7
 pypandoc==1.10
-tox==3.27.1
+tox==4.0.8
 virtualenv==20.17.0
