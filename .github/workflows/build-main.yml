@@ -55,8 +55,11 @@ jobs:
           elif [[ "${{ matrix.python-version }}" == "3.10" ]]
           then
             echo "toxenv=py310" >> $GITHUB_OUTPUT
-          else
+          elif [[ "${{ matrix.python-version }}" == "3.11" ]]
+          then
             echo "toxenv=py311" >> $GITHUB_OUTPUT
+          else
+            exit 1
           fi
 
       - name: Test with tox
