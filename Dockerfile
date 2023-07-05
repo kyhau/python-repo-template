@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:kinetic
 LABEL maintainer="virtualda@gmail.com"
 ARG PIP_INDEX_URL
 
