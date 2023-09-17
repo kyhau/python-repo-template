@@ -1,8 +1,8 @@
 # This file is used for running tox, flake8 and building the wheel
 pip==23.2.1
-setuptools==68.2.0
+setuptools==68.2.2
 virtualenv==20.24.5
-black==23.9.0
+black==23.9.1
 logilab-common==1.10.0
 pypandoc==1.11
 tox==4.11.3
