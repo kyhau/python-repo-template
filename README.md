@@ -1,6 +1,6 @@
 # python-repo-template
 
-[![githubactions](https://github.com/kyhau/python-repo-template/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/build-and-test.yml)
+[![githubactions](https://github.com/kyhau/python-repo-template/actions/workflows/build-main.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/build-main.yml)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
 [![CodeQL](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
 [![SecretsScan](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml)
