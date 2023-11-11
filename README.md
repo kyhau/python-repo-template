@@ -1,23 +1,21 @@
 # python-repo-template
 
-[![githubactions](https://github.com/kyhau/python-repo-template/workflows/Build-Main/badge.svg)](https://github.com/kyhau/python-repo-template/actions)
-[![travisci](https://img.shields.io/travis/kyhau/python-repo-template.svg?label=Travis%20CI&logo=travis&style=flat-square)](https://travis-ci.org/kyhau/python-repo-template)
+[![githubactions](https://github.com/kyhau/python-repo-template/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/build-and-test.yml)
 [![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
-[![CodeQL](https://github.com/kyhau/python-repo-template/workflows/CodeQL/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
+[![CodeQL](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
+[![SecretsScan](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml)
 
+This is a template repository that you can use to quickly create a python application that can be built, tested, and released as an internal python module.
 
-This is a template repository that you can use to quickly create a python application that can be built, tested, and
-released as an internal python module.
-
-Support Python 3.7, 3.8, 3.9, 3.10, 3.11.
+Support Python 3.9, 3.10, 3.11, 3.12.
 
 **Use**
 
 - [GitHub Actions](https://github.com/actions)
 - [CodeQL](https://codeql.github.com) is [enabled](.github/workflows/codeql-analysis.yml) in this repository.
-- [Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates) is [enabled](.github/dependabot.yml) in this repository.
-- [Snyk](https://github.com/snyk/actions) is enabled in this repository.
-- [Travis CI](https://travis-ci.org/)
+- [Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates) is [enabled](.github/dependabot.yml) for auto dependency updates.
+- [Gitleaks](https://github.com/gitleaks/gitleaks) and [TruffleHog](https://github.com/trufflesecurity/trufflehog) are enabled in this GitHub Actions [workflow](.github/workflows/secrets-scan.yml) for detecting and preventing hardcoded secrets.
+- [Snyk](https://github.com/snyk/actions) is enabled for vulnerability scanning and auto pull-request.
 - [black](https://github.com/psf/black)
 - [bump2version](https://github.com/c4urself/bump2version)
 - [codecov](https://codecov.io/)
@@ -41,7 +39,7 @@ git pull https://github.com/kyhau/python-repo-template
 **Linux**
 
 ```bash
-virtualenv -p python3.10 env
+virtualenv -p python3.11 env
 . env/bin/activate
 pip install -e .
 ```
@@ -59,7 +57,7 @@ pip install -e .
 pip install -r requirements-build.txt
 
 # Autoformat code following most of the rules in PEP 8
-black --line-length=79 module/
+black --line-length=99 module/
 
 # Run pytest, codecov, mypy and flake8 with Tox
 tox -r
