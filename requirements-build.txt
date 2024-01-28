@@ -2,7 +2,7 @@
 pip==23.3.2
 setuptools==69.0.3
 virtualenv==20.25.0
-black==23.12.1
+black==24.1.1
 logilab-common==2.0.0
 pypandoc==1.12
 tox==4.12.1
