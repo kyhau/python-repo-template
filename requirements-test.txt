@@ -2,7 +2,7 @@
 codecov==2.1.13
 cov-core==1.15.0
 coverage==7.5.3
-flake8==7.0.0
+flake8==7.1.0
 mock==5.1.0
 mypy==1.10.0
 pytest==8.2.2
