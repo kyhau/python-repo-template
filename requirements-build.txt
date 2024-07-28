@@ -1,5 +1,5 @@
 # This file is used for running tox, flake8 and building the wheel
-pip==24.1.2
+pip==24.2
 setuptools==71.1.0
 virtualenv==20.26.3
 black==24.4.2
