@@ -1,7 +1,7 @@
 # This file prepares the pytest and coverage env and is used by tox.ini
 codecov==2.1.13
 cov-core==1.15.0
-coverage==7.6.9
+coverage==7.6.10
 flake8==7.1.1
 mock==5.1.0
 mypy==1.14.0
