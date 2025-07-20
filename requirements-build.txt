@@ -5,4 +5,4 @@ virtualenv==20.31.2
 black==25.1.0
 logilab-common==2.1.0
 pypandoc==1.15
-tox==4.27.0
+tox==4.28.0
