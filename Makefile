@@ -1,4 +1,4 @@
-.PHONY: help setup-init setup-venv install install-dev install-test install-all lock update-deps test test-with-coverage lint-python lint-yaml format-python build clean clean-all check-poetry
+.PHONY: help setup-init setup-venv install install-dev install-test install-all lock update-deps test test-with-coverage lint-python lint-yaml format-python pre-commit build clean clean-all check-poetry
 
 .DEFAULT_GOAL := help
 
@@ -63,6 +63,10 @@ lint-yaml: install-dev ## Lint YAML files with yamllint
 format-python: install-dev ## Format Python code with black
 	@$(POETRY) run black --line-length=100 $(PACKAGE_NAME)/
 
+# Pre-commit checks
+pre-commit: format-python lint-python lint-yaml test-with-coverage ## Run all quality checks before committing
+	@echo "✓ All pre-commit checks passed!"
+
 # Build
 build: check-poetry ## Build the package
 	@$(BUILD)
@@ -73,7 +77,7 @@ clean: ## Clean test artifacts, build artifacts and temporary files
 	@rm -rf .coverage* coverage.xml htmlcov/
 	@rm -rf junit.xml
 	@rm -rf build/ dist/ *.egg-info/
-	@rm -rf .pytest_cache/ .ruff_cache/
+	@rm -rf .pytest_cache/
 	@find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	@find . -type f -name "*.py[cod]" -delete 2>/dev/null || true
 	@echo "✓ Cleanup complete"
@@ -82,4 +86,3 @@ clean-all: clean ## Clean everything including virtual environment
 	@echo "Removing virtual environment..."
 	@rm -rf .venv/
 	@echo "✓ Full cleanup complete"
-

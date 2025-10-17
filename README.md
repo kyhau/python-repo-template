@@ -77,6 +77,7 @@ make test-with-coverage # Run tests with coverage
 make format-python      # Auto-format Python code
 make lint-python        # Lint Python code
 make lint-yaml          # Lint YAML files
+make pre-commit         # Run all quality checks (format, lint, test)
 make build              # Build the package
 make clean              # Clean build artifacts
 ```
@@ -117,7 +118,7 @@ python-repo-template/
 │   ├── __init__.py
 │   └── main.py
 ├── tests/                # Unit tests
-│   └── test_example.py
+│   └── test_main.py
 ├── pyproject.toml        # Project metadata and dependencies
 ├── Makefile              # Build and test commands
 └── README.md             # This file

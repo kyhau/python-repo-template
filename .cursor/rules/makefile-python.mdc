@@ -30,6 +30,7 @@ alwaysApply: true
 - `make lint-python` - Lint Python code with flake8
 - `make lint-yaml` - Lint YAML files with yamllint
 - `make format-python` - Format Python code with black
+- `make pre-commit` - Run all quality checks (format, lint, test)
 
 ### Build
 - `make build` - Build the Python package
@@ -62,7 +63,9 @@ make test-with-coverage      # Verify installation
 **Daily development:**
 ```bash
 # 1. Make code changes
-# 2. Quality checks
+# 2. Run all quality checks before committing
+make pre-commit             # Format, lint, and test everything
+# Or run individual checks:
 make format-python          # Auto-format
 make lint-python            # Lint Python
 make lint-yaml              # Lint YAML
