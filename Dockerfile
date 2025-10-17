@@ -1,12 +1,24 @@
-FROM ubuntu:22.10
+FROM python:3.13-slim
 LABEL maintainer="virtualda@gmail.com"
-ARG PIP_INDEX_URL
 
-ADD  .  /opt/apps/module
+WORKDIR /opt/apps/app
 
-# Install module
-RUN ((cd /opt/apps/module && python3 -m pip --no-cache-dir install -e .) && \
-     rm -rf /root/.cache/pip)
+# Install Poetry
+RUN pip install --no-cache-dir poetry==1.8.4
 
-# Call module's main entry point/script defined in setup.py
-#CMD ["run_module"]
+# Copy dependency files first for better layer caching
+COPY pyproject.toml poetry.lock ./
+
+# Install dependencies only (without the package)
+RUN poetry config virtualenvs.create false && \
+    poetry install --only main --no-root && \
+    rm -rf /root/.cache/pip
+
+# Copy application code
+COPY app/ ./app/
+
+# Install the package itself
+RUN poetry install --only-root
+
+# Call app's main entry point defined in pyproject.toml
+# CMD ["app-cli"]

@@ -1,10 +1,6 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
+  # GitHub Actions dependencies
   - package-ecosystem: github-actions
     directory: "/"
     groups:
@@ -16,7 +12,8 @@ updates:
       time: "08:00"
       timezone: Australia/Melbourne
 
-  - package-ecosystem: pip
+  # Python dependencies managed by Poetry
+  - package-ecosystem: poetry
     directory: "/"
     groups:
       all-dependencies:
@@ -24,6 +21,6 @@ updates:
           - "*"
     schedule:
       interval: weekly
-      time: "09:00"
+      time: "08:00"
       timezone: Australia/Melbourne
     open-pull-requests-limit: 1
