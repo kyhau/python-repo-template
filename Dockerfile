@@ -4,7 +4,7 @@ LABEL maintainer="virtualda@gmail.com"
 WORKDIR /opt/apps/app
 
 # Install Poetry
-RUN pip install --no-cache-dir poetry
+RUN pip install --no-cache-dir poetry==1.8.4
 
 # Copy dependency files first for better layer caching
 COPY pyproject.toml poetry.lock ./
