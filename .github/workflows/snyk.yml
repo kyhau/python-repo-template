@@ -1,4 +1,4 @@
-name: Synk
+name: Synk Checks
 
 on:
   push:
