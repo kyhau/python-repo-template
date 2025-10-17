@@ -3,9 +3,26 @@ run-name: Build and Test @ ${{ github.ref_name }}
 
 on:
   push:
-    paths-ignore:
-      - '**.json'
-      - '**.md'
+    branches: [main, master]
+    paths:
+      - .github/**
+      - app/**
+      - tests/**
+      - Dockerfile
+      - Makefile
+      - poetry.lock
+      - pyproject.toml
+  pull_request:
+    branches: [main, master]
+    paths:
+      - .github/**
+      - app/**
+      - tests/**
+      - Dockerfile
+      - Makefile
+      - poetry.lock
+      - pyproject.toml
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}
@@ -45,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.12", "3.13"]
 
     steps:
       - name: Checkout source

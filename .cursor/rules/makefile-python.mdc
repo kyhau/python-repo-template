@@ -51,7 +51,7 @@ make test-with-coverage      # Verify installation
 
 ## Python Environment
 - **Poetry** - Dependency management
-- **Python 3.11+** - Minimum version
+- **Python 3.12+** - Minimum version
 - **`.venv/`** - Virtual environment (project-local)
 - **Dependencies** in `pyproject.toml`:
   - Test: pytest, pytest-cov
