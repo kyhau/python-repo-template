@@ -1,90 +1,134 @@
 # python-repo-template
 
-[![githubactions](https://github.com/kyhau/python-repo-template/actions/workflows/build-main.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/build-main.yml)
-[![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
-[![CodeQL](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
-[![SecretsScan](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml)
+[![Build and Test](https://github.com/kyhau/python-repo-template/workflows/Build%20and%20Test/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/python-ci.yml)
+[![Codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
+[![CodeQL](https://github.com/kyhau/python-repo-template/workflows/CodeQL/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://en.wikipedia.org/wiki/MIT_License)
 
-This is a template repository that you can use to quickly create a python application that can be built, tested, and released as an internal python module.
+Modern Python project template with Poetry, Makefile workflows, automated testing, linting, and GitHub Actions CI/CD.
 
-Support Python 3.9, 3.10, 3.11, 3.12.
+**Supports Python 3.11, 3.12, 3.13**
 
-**Use**
+## ✨ What's Included
 
-- [GitHub Actions](https://github.com/actions)
-- [CodeQL](https://codeql.github.com) is [enabled](.github/workflows/codeql-analysis.yml) in this repository.
-- [Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates) is [enabled](.github/dependabot.yml) for auto dependency updates.
-- [Gitleaks](https://github.com/gitleaks/gitleaks) and [TruffleHog](https://github.com/trufflesecurity/trufflehog) are enabled in this GitHub Actions [workflow](.github/workflows/secrets-scan.yml) for detecting and preventing hardcoded secrets.
-- [Snyk](https://github.com/snyk/actions) is enabled for vulnerability scanning and auto pull-request.
-- [black](https://github.com/psf/black)
-- [bump2version](https://github.com/c4urself/bump2version)
-- [codecov](https://codecov.io/)
-- [flake8](https://gitlab.com/pycqa/flake8)
-- [Mypy](https://github.com/python/mypy)
-- [tox](https://tox.readthedocs.io/en/latest/)
+### 🔧 Development Tools
+- **[Poetry](https://python-poetry.org/)** - Modern dependency management
+- **[Makefile](Makefile)** - Convenient command shortcuts for common tasks
+- **[pytest](https://pytest.org/)** - Testing framework with coverage reporting
+- **[black](https://black.readthedocs.io/)** - Code formatting
+- **[flake8](https://flake8.pycqa.org/)** - Python code linting
+- **[yamllint](https://yamllint.readthedocs.io/)** - YAML file linting
 
-## Setting up a new repository from this template
+### 🔐 Security & Code Quality
+- **[CodeQL](https://codeql.github.com)** - Automated security analysis ([workflow](.github/workflows/codeql-analysis.yml))
+- **[Secrets Scan](https://github.com/gitleaks/gitleaks)** - Gitleaks and TruffleHog for detecting hardcoded secrets ([workflow](.github/workflows/secrets-scan.yml))
+- **[Snyk](https://snyk.io/)** - Vulnerability scanning ([workflow](.github/workflows/snyk.yml))
+- **[Dependabot](https://docs.github.com/en/code-security/dependabot)** - Automated dependency updates ([config](.github/dependabot.yml))
 
-Create a directory and pull all the files in this template.
+### 🚀 CI/CD
+- **[GitHub Actions](https://github.com/features/actions)** - Automated testing and deployment
+- **[Codecov](https://codecov.io/)** - Code coverage reporting
+- **Stale Issue Management** - Automatically closes inactive issues
 
-```
+## 🚀 Getting Started
+
+### 1. Create Repository from Template
+
+Click **"Use this template"** on GitHub or:
+
+```bash
 mkdir new_repo_name
 cd new_repo_name
 git init
 git pull https://github.com/kyhau/python-repo-template
 ```
 
-## Create virtual env and install dependencies
+### 2. Customize Your Project
 
-**Linux**
+Update these files:
+- `pyproject.toml` - Package name, version, dependencies
+- `Makefile` - Set `PACKAGE_NAME` and `TEST_PATH` variables
+- `README.md` - Replace with your project description
+- `app/` - Rename to your package name
+
+### 3. Set Up Development Environment
+
+**Quick setup (recommended for first-time setup):**
+```bash
+make setup-init
+```
+
+**Manual setup (if you prefer step-by-step):**
+```bash
+make setup-venv    # Configure Poetry to use local virtualenv
+make install-all   # Install all dependencies
+```
+
+## 📋 Development Workflow
+
+### Common Commands
 
 ```bash
-virtualenv -p python3.11 env
-. env/bin/activate
-pip install -e .
+make setup-init         # First-time setup (configure, lock, install everything)
+make help               # Show all available commands
+make install-all        # Install all dependencies (main, dev, test)
+make test               # Run tests without coverage
+make test-with-coverage # Run tests with coverage
+make format-python      # Auto-format Python code
+make lint-python        # Lint Python code
+make lint-yaml          # Lint YAML files
+make build              # Build the package
+make clean              # Clean build artifacts
 ```
 
-**Windows**
-```
-virtualenv -p C:\Python310\python.exe env
-env\Scripts\activate
-pip install -e .
-```
+### Running Tests
 
-## Run Black, then run pytest, codecov, mypy and flake8 with Tox
+```bash
+# Run tests with coverage
+make test-with-coverage
 
-```
-pip install -r requirements-build.txt
+# Run tests only
+make test
 
-# Autoformat code following most of the rules in PEP 8
-black --line-length=99 module/
-
-# Run pytest, codecov, mypy and flake8 with Tox
-tox -r
+# Format and lint code
+make format-python
+make lint-python
+make lint-yaml
 ```
 
+### Managing Dependencies
 
-## Version-bump your application or module with [bump2version](https://github.com/c4urself/bump2version)
+```bash
+# Update dependencies to latest compatible versions
+make update-deps
 
-Examples
+# Regenerate lock file
+make lock
+```
 
-    # e.g. 1.2.3.dev0 -> 1.2.3
-    bumpversion --allow-dirty --commit --tag release
+## 🏗️ Project Structure
 
-    # e.g. 1.2.3 -> 1.2.4.dev0
-    bumpversion --commit patch
+```
+python-repo-template/
+├── .github/
+│   ├── workflows/        # CI/CD workflows
+│   └── dependabot.yml    # Dependency updates config
+├── app/                  # Your Python package
+│   ├── __init__.py
+│   └── main.py
+├── tests/                # Unit tests
+│   └── test_example.py
+├── pyproject.toml        # Project metadata and dependencies
+├── Makefile              # Build and test commands
+└── README.md             # This file
+```
 
-    # e.g. 1.2.3.dev0 -> 2.0.0.dev0
-    bumpversion --commit major
+## 📦 Building and Releasing
 
-    # e.g. 1.2.3.dev0 -> 1.3.0.dev0
-    bumpversion --commit minor
+```bash
+# Build the package
+make build
 
-    # e.g. 1.2.3.dev0 -> 1.2.4.dev0
-    bumpversion --commit patch
-
-    # e.g. 1.2.3.dev0 -> 1.2.3.dev1
-    bumpversion --commit dev
-
-    # e.g. 1.2.3.dev0 -> 1.2.3
-    bumpversion --dry-run --list release
+# The built package will be in dist/
+ls dist/
+```
