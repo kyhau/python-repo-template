@@ -1,8 +1,13 @@
 # python-repo-template
 
-[![Build and Test](https://github.com/kyhau/python-repo-template/workflows/Build%20and%20Test/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/python-ci.yml)
+[![CI](https://github.com/kyhau/python-repo-template/workflows/CI/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/ci.yml)
 [![Codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/main/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
 [![CodeQL](https://github.com/kyhau/python-repo-template/workflows/CodeQL/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/codeql-analysis.yml)
+[![Snyk Checks](https://github.com/kyhau/python-repo-template/workflows/Synk%20Checks/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/snyk.yml)
+[![Secrets Scan](https://github.com/kyhau/python-repo-template/workflows/Secrets%20Scan/badge.svg)](https://github.com/kyhau/python-repo-template/actions/workflows/secrets-scan.yml)
+![Python Version](https://img.shields.io/badge/python-3.12%20%7C%203.13-blue)
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/kyhau/python-repo-template)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://en.wikipedia.org/wiki/MIT_License)
 
 Modern Python project template with Poetry, Makefile workflows, automated testing, linting, and GitHub Actions CI/CD.
