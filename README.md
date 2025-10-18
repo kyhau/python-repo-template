@@ -12,6 +12,8 @@
 
 Modern Python project template with Poetry, Makefile workflows, automated testing, linting, and GitHub Actions CI/CD.
 
+All notable changes to this project will be documented in [CHANGELOG](./CHANGELOG.md).
+
 **Supports Python 3.12, 3.13**
 
 ## ✨ What's Included
