@@ -14,7 +14,7 @@ def test_sample_function():
 def test_main():
     """Test main() returns correct exit code and prints output."""
     captured_output = StringIO()
-    with patch('sys.stdout', new=captured_output):
+    with patch("sys.stdout", new=captured_output):
         result = main.main()
 
     assert result == 0
